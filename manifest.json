@@ -1,0 +1,13 @@
+{
+  "name": "Language Reactor subtitle controller",
+  "version": "1.0",
+  "description": "Hotkeys and copypaste",
+  "permissions": ["https://www.netflix.com/*", "https://www.youtube.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/*", "https://www.youtube.com/*"],
+      "js": ["subtitles.js"]
+    }
+  ],
+  "manifest_version": 2
+}
