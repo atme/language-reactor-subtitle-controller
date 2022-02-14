@@ -6,13 +6,14 @@ const toggleSubtitles = () => {
   el.display = el.display == "none" ? "flex" : "none";
 };
 
-const copySubtitles = () => {
-  const text = document
+const copySubtitles = async () => {
+  const words = document
     .getElementById("lln-subs")
-    .textContent.replaceAll(".", "")
-    .replaceAll("Save", "")
-    .trim();
-  navigator.clipboard.writeText(text).then(() => {});
+    .getElementsByClassName("lln-word");
+  const text = Array.from(words)
+    .map((el) => el.innerText)
+    .join(" ");
+  await navigator.clipboard.writeText(text);
 };
 
 window.onload = () => {
